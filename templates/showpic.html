@@ -1,0 +1,26 @@
+<!doctype html>
+<title>Hello!!</title>
+<h1>Here's a picture!</h1>
+
+{%if request.path == "/cat" %} <h2>Cat</h2> 
+{% elif request.path == "/dog" %} <h2>Dog</h2>
+{% elif request.path == "/" %} <h2>Please Select a Camera</h2>{% endif %}
+<body>
+<div>Select Camera: <a href="/cat">Cat</a> | <a href="/dog">Dog</a></div>
+
+<!-- <form action="/pic" onClick="history.go(0)" method = "post">
+	<button type= "submit" class="btn btn-default btn-xs">Take New Picture</button>
+</form>  -->
+
+<FORM>
+<INPUT name="but1" TYPE="button" method= "post" onClick="history.go(0)" VALUE="Press for new pic!">
+<!-- <INPUT name="catbutton" TYPE="button" action="/cat" method= "post" onClick="history.go(0)" VALUE="Press for new pic of couch">
+<INPUT name="dogbutton" TYPE="button" action="/dog" method= "post" onClick="history.go(0)" VALUE="Press for new pic of dog"> -->
+</FORM>
+
+<div></div>   
+<div></div>
+
+<img src="{{ url_for('cam_feed') }}">
+<!-- <img src="static/pic.png">
+-->
